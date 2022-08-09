@@ -56,16 +56,20 @@
 % Fonts
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifxetexorluatex
-  \usepackage{unicode-math}
-  \setmainfont{EB Garamond}
-  \setmathfont{Garamond Math}
-  \setmonofont[Scale=MatchLowercase]{Source Code Pro}
-\else
-  \usepackage[lf]{ebgaramond}
-  \usepackage[oldstyle,scale=0.7]{sourcecodepro}
-  \singlespacing
-\fi
+% Set serif font:
+\usepackage[lining,semibold,scaled=1.05]{ebgaramond}
+
+% Set monospace font:
+\usepackage[scale=0.85]{sourcecodepro}
+
+% if amsthm is needed, must be loaded before newtxmath
+\usepackage{amsthm}
+
+% Set math font:
+\usepackage[ebgaramond,vvarbb,subscriptcorrection]{newtxmath}
+
+% load after all math to give access to bold math using \bm{..} command:
+\usepackage{bm}
 
 \newacronym[description={Principal component analysis}]{PCA}{PCA}{principal component analysis}
 \newacronym                                            {SNF}{SNF}{Smith normal form}
